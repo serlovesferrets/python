@@ -26,12 +26,14 @@ def input_grade(
         subject, grade = text[0], float(text[1])
         return (subject, grade)
     except ValueError:
+       print(on_invalid_float)
         return input_grade(
             prompt=on_invalid_float,
             on_invalid_input=on_invalid_input,
             on_invalid_float=on_invalid_float,
         )
     except IndexError:
+       print(on_invalid_input)
         return input_grade(
             prompt=on_invalid_input,
             on_invalid_float=on_invalid_float,
