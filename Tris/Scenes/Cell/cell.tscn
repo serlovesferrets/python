@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr2nvxuo7mllc"]
+
+[ext_resource type="Texture2D" uid="uid://umb7yvyt1irc" path="res://Assets/Aseprite/cross.png" id="1_02g20"]
+[ext_resource type="Script" path="res://Scenes/Cell/Cell.cs" id="1_5rp2u"]
+[ext_resource type="Texture2D" uid="uid://ctkfn22mc3q14" path="res://Assets/Aseprite/circ.png" id="1_76038"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5wwf"]
+size = Vector2(80, 80)
+
+[node name="Cell" type="Area2D"]
+script = ExtResource("1_5rp2u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l5wwf")
+
+[node name="Circ" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_76038")
+
+[node name="Cross" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_02g20")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://4ndkw7utwers"]
+
+[ext_resource type="PackedScene" uid="uid://ckona0lk2lslp" path="res://Scenes/Board/board.tscn" id="1_0m3cd"]
+
+[node name="Main" type="Node"]
+
+[node name="Board" parent="." instance=ExtResource("1_0m3cd")]
+
+[node name="ResetStateBtn" type="Button" parent="." groups=["Buttons"]]
+anchors_preset = -1
+anchor_left = 0.749333
+anchor_right = 1.0
+anchor_bottom = 0.068
+grow_horizontal = 0
+grow_vertical = 0
+text = "Reset game"
+
+[node name="WinnerText" type="Label" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Game in progress"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ResetStateBtn" to="Board" method="_on_reset_state_btn_pressed"]

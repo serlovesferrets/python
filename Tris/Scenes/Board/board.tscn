@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckona0lk2lslp"]
+
+[ext_resource type="Script" path="res://Scenes/Board/Board.cs" id="1_aenrf"]
+[ext_resource type="Texture2D" uid="uid://rbcuomf2we6t" path="res://Assets/Aseprite/board.png" id="1_o54pp"]
+[ext_resource type="Script" path="res://Scenes/Board/CellsManager.cs" id="2_i8al3"]
+[ext_resource type="PackedScene" uid="uid://dr2nvxuo7mllc" path="res://Scenes/Cell/cell.tscn" id="2_wkvgt"]
+[ext_resource type="Texture2D" uid="uid://umb7yvyt1irc" path="res://Assets/Aseprite/cross.png" id="4_f8uqr"]
+[ext_resource type="Script" path="res://Scenes/Board/State.cs" id="5_v2vih"]
+
+[node name="Board" type="Node2D"]
+position = Vector2(375, 375)
+scale = Vector2(2, 2)
+script = ExtResource("1_aenrf")
+
+[node name="State" type="Node" parent="."]
+script = ExtResource("5_v2vih")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o54pp")
+
+[node name="Cells" type="Node2D" parent="."]
+script = ExtResource("2_i8al3")
+
+[node name="BottomLeft" parent="Cells" node_paths=PackedStringArray("BoardState") instance=ExtResource("2_wkvgt")]
+TrisPosition = 6
+BoardState = NodePath("../../State")
+
+[node name="MiddleLeft" parent="Cells" node_paths=PackedStringArray("BoardState") instance=ExtResource("2_wkvgt")]
+TrisPosition = 3
+BoardState = NodePath("../../State")
+
+[node name="TopLeft" parent="Cells" node_paths=PackedStringArray("BoardState") instance=ExtResource("2_wkvgt")]
+TrisPosition = 0
+BoardState = NodePath("../../State")
+
+[node name="BottomRight" parent="Cells" node_paths=PackedStringArray("BoardState") instance=ExtResource("2_wkvgt")]
+TrisPosition = 8
+BoardState = NodePath("../../State")
+
+[node name="MiddleRight" parent="Cells" node_paths=PackedStringArray("BoardState") instance=ExtResource("2_wkvgt")]
+TrisPosition = 5
+BoardState = NodePath("../../State")
+
+[node name="TopRight" parent="Cells" node_paths=PackedStringArray("BoardState") instance=ExtResource("2_wkvgt")]
+TrisPosition = 2
+BoardState = NodePath("../../State")
+
+[node name="Bottom" parent="Cells" node_paths=PackedStringArray("BoardState") instance=ExtResource("2_wkvgt")]
+TrisPosition = 7
+BoardState = NodePath("../../State")
+
+[node name="Top" parent="Cells" node_paths=PackedStringArray("BoardState") instance=ExtResource("2_wkvgt")]
+BoardState = NodePath("../../State")
+
+[node name="Middle" parent="Cells" node_paths=PackedStringArray("BoardState") instance=ExtResource("2_wkvgt")]
+TrisPosition = 4
+BoardState = NodePath("../../State")
+
+[node name="Cross" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_f8uqr")
