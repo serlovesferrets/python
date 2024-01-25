@@ -1,0 +1,38 @@
+cabal-version:      3.0
+name:               x04-rubrica
+version:            0.1.0.0
+-- synopsis:
+-- description:
+license:            MIT
+license-file:       LICENSE
+author:             ser
+maintainer:         140543954+serdookr@users.noreply.github.com
+-- copyright:
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    exposed-modules:  ContactsLib
+    -- other-modules:
+    -- other-extensions:
+    build-depends:    base ^>=4.17.2.1
+                    , containers
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+executable x04-rubrica
+    import:           warnings
+    main-is:          Main.hs
+    -- other-modules:
+    -- other-extensions:
+    build-depends:
+        base ^>=4.17.2.1,
+        x04-rubrica
+
+    hs-source-dirs:   app
+    default-language: Haskell2010
