@@ -18,6 +18,7 @@ common warnings
 library
     import:           warnings
     exposed-modules:  ContactsLib
+                      Menu
     -- other-modules:
     -- other-extensions:
     build-depends:    base ^>=4.17.2.1
