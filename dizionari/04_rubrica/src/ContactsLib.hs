@@ -50,18 +50,26 @@ class Rubric r where
 newtype ContactList = ContactList [Contact]
 
 instance Show ContactList where
+  show :: ContactList -> String
   show (ContactList cs) = foldr folder "Contacts:" cs
     where
       folder c acc = acc ++ "\n" ++ show c
 
 instance Rubric ContactList where
+  getContact :: ContactFinder -> ContactList -> Maybe Contact
   getContact predicate (ContactList cs) =
     case filter predicate cs of
       (c : _) -> Just c
       [] -> Nothing
 
+  addContact :: ValidContact -> ContactList -> ContactList
   addContact (ValidContact c) (ContactList cs) = ContactList (c : cs)
 
+  editContact ::
+    ContactFinder ->
+    (Contact -> Contact) ->
+    ContactList ->
+    Either String ContactList
   editContact predicate update (ContactList cs) =
     case findIndex predicate cs of
       Nothing -> Left "Contact not found!"
@@ -75,6 +83,7 @@ instance Rubric ContactList where
               Just (ValidContact updated) ->
                 Right . ContactList $ right ++ (updated : left)
 
+  removeContact :: ContactFinder -> ContactList -> Either String ContactList
   removeContact predicate (ContactList cs) =
     case findIndex predicate cs of
       Nothing -> Left "Contact not found!"

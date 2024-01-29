@@ -1,43 +1,24 @@
 module Main where
 
-import ContactsLib
-import Data.Char (isSpace)
+import ContactsLib (ContactList, defaultContacts)
 import Menu
-  ( Menu (..),
-    Option (Option, _action, _description),
-    runMenu,
-  )
 
-menuGetAllContacts :: Option
-menuGetAllContacts =
-  Option
-    { _description = "Get all contacts",
-      _action = return $ show defaultContacts
-    }
+type AppState = ContactList
 
-menuAddContact = do
-  putStrLn "Inserisci il nome del contatto."
-  name <- getLine
-  putStrLn "Inserisci il numero."
-  phoneNumber <- getLine
-  putStrLn "Inserisci l'indirizzo (non necessario)"
-  address <- getLine
-  putStrLn "Inserisci l'email (non necessario)"
-  email <- getLine
+state :: AppState
+state = defaultContacts
 
-  let contact =
-        Contact
-          { _name = name,
-            _phoneNumber = phoneNumber,
-            _address = if isSpace `all` address then Nothing else Just address,
-            _email = if isSpace `all` email then Nothing else Just email
-          }
+options :: [MenuOption AppState]
+options =
+  [ MenuOption
+      { _description = "Get all the contacts",
+        _action = \s -> return (s, Ok $ show s)
+      }
+  ]
 
-  return name
-
-menu :: Menu
-menu = Menu [menuGetAllContacts]
+menu :: MenuChooser AppState
+menu = makeMenu "Gestore contatti" state options
 
 main :: IO ()
 main = do
-  runMenu menu "Contacts app"
+  runMenu menu
