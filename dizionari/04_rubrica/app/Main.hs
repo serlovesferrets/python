@@ -8,11 +8,14 @@ type AppState = ContactList
 state :: AppState
 state = defaultContacts
 
+menuGetAllContacts :: MenuAction AppState
+menuGetAllContacts s = return (s, Ok $ show s)
+
 options :: [MenuOption AppState]
 options =
   [ MenuOption
       { _description = "Get all the contacts",
-        _action = \s -> return (s, Ok $ show s)
+        _action = menuGetAllContacts
       }
   ]
 
