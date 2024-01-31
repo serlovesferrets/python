@@ -19,7 +19,6 @@ library
     import:           warnings
     exposed-modules:  ContactsLib
                       Menu
-    -- other-modules:
     -- other-extensions:
     build-depends:    base ^>=4.17.2.1
                     , containers
@@ -29,7 +28,9 @@ library
 executable x04-rubrica
     import:           warnings
     main-is:          Main.hs
-    -- other-modules:
+    other-modules:    Menu.Shared, Menu.GetAllContacts, Menu.GetContact, Menu.EditContact, Menu.RemoveContact
+
+    -- other-modules:    menu
     -- other-extensions:
     build-depends:
         base ^>=4.17.2.1,

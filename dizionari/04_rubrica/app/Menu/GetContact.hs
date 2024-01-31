@@ -1,0 +1,1 @@
+module Menu.GetContact where
