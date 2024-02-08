@@ -121,7 +121,7 @@ executeAction
 -- | Prints a menu's title, and starts executing it.
 runMenu :: MenuChooser a -> IO ()
 runMenu menu@Menu {_title = title} = do
-  putStrLn $ "# " ++ title
+  putStr $ "# " ++ title
   runMenu' menu
 
 -- | Executes the menu until it gets told to termite the program.
