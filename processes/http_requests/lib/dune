@@ -1,0 +1,6 @@
+(library
+ (name http_requests)
+ (libraries base stdio ezcurl async cohttp cohttp-async)
+ (modules site_checker websites)
+ (preprocess
+  (pps ppx_let)))
