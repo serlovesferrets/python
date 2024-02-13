@@ -1,0 +1,4 @@
+(executable
+ (public_name http_requests)
+ (name main)
+ (libraries http_requests base async stdio))
