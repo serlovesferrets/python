@@ -1,9 +1,8 @@
-open! Base
+open Base
 open Async
 open Cohttp_async
 open Cohttp
 open Websites
-module Domain = Stdlib.Domain
 
 let check_async uri =
   let uri_str = Uri.to_string uri in

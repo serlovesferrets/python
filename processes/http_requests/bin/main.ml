@@ -15,7 +15,7 @@ let () =
      (* Nota: asincrono tramite scheduler. 
       * Per usare thread, si utilizzerebbe il modulo Domain.
       * Troppo complesso per via di Cohttp che non supporta
-      * Richieste sincrone. 
+      * richieste sincrone. 
       *)
      | "async" -> print_results_async ()
      | "sync" -> print_results_sync ()
