@@ -1,0 +1,4 @@
+(executable
+ (public_name working_with_files)
+ (name main)
+ (libraries working_with_files lwt.unix))
