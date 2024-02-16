@@ -1,4 +1,0 @@
-(lang dune 3.13)
-(name working_with_files)
-(sections (lib .) (bin ../../bin))
-(files (lib (META dune-package opam)) (bin (working_with_files)))

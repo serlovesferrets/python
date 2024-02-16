@@ -1,8 +1,0 @@
-lib: [
-  "_build/install/default/lib/working_with_files/META"
-  "_build/install/default/lib/working_with_files/dune-package"
-  "_build/install/default/lib/working_with_files/opam"
-]
-bin: [
-  "_build/install/default/bin/working_with_files"
-]
