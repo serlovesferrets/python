@@ -24,6 +24,4 @@ let async_main =
   in
   exercise ()
 
-let () =
-  let _ = Common.make_directory_p "_build" in
-  Lwt_main.run async_main
+let () = Lwt_main.run async_main
