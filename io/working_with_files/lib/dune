@@ -1,0 +1,4 @@
+(library
+ (modules exercise_1 exercise_2 exercise_3 uris common)
+ (name working_with_files)
+ (libraries base re2 stdio cohttp cohttp-lwt cohttp-lwt-unix lwt lwt.unix))
