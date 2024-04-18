@@ -15,6 +15,7 @@ class Activity:
 
 # 1. 9:36
 
+# 1.0: ho definito i dati in maniera corretta
 
 data = {
     "giuseppe gullo": [
@@ -36,6 +37,7 @@ data = {
 
 # 2. 9:36
 
+# 1.0: aggiunto in maniera corretta, con la giusta sintassi
 
 data["giorgio sangion ortolan"] = [
     Activity("corsa campestre", (0, 28, 11), "juniores fem"),
@@ -45,6 +47,7 @@ data["giorgio sangion ortolan"] = [
 
 # 3. 9:36
 
+# 1.0: progettata in modo che se la prima categoria dovesse cambiare, viene presa correttamente
 
 for k, v in data.items():
     cat = (
@@ -60,12 +63,14 @@ for k, v in data.items():
     )
 # 4. 9:38
 
+# 1.0: accesso eseguito con la modalità corretta
 
 activity = data["giuseppe gullo"][0]
 print(activity)
 
 # 5. 9:42
 
+# 1.0: accesso eseguito con la modalità corretta (oltre ad un print per separare dall'output precedente)
 
 activity = data["nicola esposito"][2]
 print("---")
@@ -75,6 +80,7 @@ print(activity.category)
 
 # 6. 9:44
 
+# 1.0: idem
 
 print("---")
 time = data["antonia barbera"][1].time_taken
@@ -83,6 +89,7 @@ print(f"Tempo: {minutes}:{sec}.{millis}")
 
 # 7. 9:53
 
+# 1.0: filtraggio eseguito in maniera idiomatica
 
 print("---")
 times = [
@@ -93,6 +100,8 @@ times = [
 print(f"Max time: {max(times)}")
 
 # 8. 10:01
+
+# 0.9: avrei potuto usare la funzione max(by=<predicate>)
 
 print("---")
 acts = [
@@ -117,6 +126,8 @@ print(f"Min time: {min_act.time_taken} by {min_name}")
 
 # 9. 10:17
 
+# 1.0: dati non ricalcolati (più efficiente) 
+
 print("---")
 # Ho già i dati (punto 7, times)
 
@@ -137,6 +148,8 @@ mean = (
 print(f"Media: {mean}")
 
 # 10. 10:27
+
+# 0.8: non ho fatto i controlli nell'input
 
 def activity_io(name: str) -> Activity:
     print(f"Per {name}:")
