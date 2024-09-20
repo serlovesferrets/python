@@ -52,7 +52,7 @@ Notti: {self.nights}"""
 
 apartments: dict[int, Apartment] = {}
 
-safe_code: Callable[[], int] = retry_until(
+safe_code: Callable[[], int] = lambda: retry_until(
     lambda: safe_int("Inserisci il codice: "),
     lambda c: int(c) not in apartments,
     "Questo codice è già stato usato!",
