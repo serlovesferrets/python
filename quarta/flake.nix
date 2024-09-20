@@ -12,9 +12,14 @@
     in
     {
       devShells = mapSystem ({ pkgs }: {
-        default = pkgs.mkShell {
-          buildInputs = with pkgs; [ hello ];
-        };
+        default = with pkgs;
+          let
+            projectPkgs = [ python312 ];
+            devPkgs = [ pyright ruff ];
+          in
+          mkShell {
+            buildInputs = projectPkgs ++ devPkgs;
+          };
       });
     };
 }

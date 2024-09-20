@@ -1,8 +1,0 @@
-lib: [
-  "_build/install/default/lib/http_requests/META"
-  "_build/install/default/lib/http_requests/dune-package"
-  "_build/install/default/lib/http_requests/opam"
-]
-bin: [
-  "_build/install/default/bin/http_requests"
-]

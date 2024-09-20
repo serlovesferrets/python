@@ -1,4 +1,0 @@
-(lang dune 3.13)
-(name http_requests)
-(sections (lib .) (bin ../../bin))
-(files (lib (META dune-package opam)) (bin (http_requests)))
